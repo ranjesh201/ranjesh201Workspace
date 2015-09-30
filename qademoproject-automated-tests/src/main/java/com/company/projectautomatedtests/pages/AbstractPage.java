@@ -55,28 +55,6 @@ public abstract class AbstractPage implements IPage{
 
 
 
-    /*
-   Waits for a specific element to be visible for up to 10 seconds
-    */
-    public void waitForElementToBeVisible(String cssSelector) throws Throwable{
-        // Fail fast if the element doesn't exist
-        if (!webBot.exists(null, By.cssSelector(cssSelector))) {
-            fail("Could not determine if element is visible as it does not exist: " + cssSelector);
-        }
 
-        logger.info("Waiting for element to appear "+cssSelector);
-        for(int i = 0; i <= 40 ; i++) {
-            // find it each time to prevent selenium reference going stale
-            WebElement e = webBot.findElement(By.cssSelector(cssSelector));
-            if (e.isDisplayed()) {
-                logger.info("Element is visible");
-                return;
-            } else {
-                Thread.sleep(250);
-            }
-            System.out.print(".");
-        }
-        fail("Element did not become visible: "+cssSelector);
-    }
 
 }

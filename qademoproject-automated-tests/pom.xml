@@ -8,7 +8,7 @@
     <artifactId>com.somecompany.aproject-automated-tests</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
-        <seleniumVersion>2.44.0</seleniumVersion>
+        <seleniumVersion>2.47.0</seleniumVersion>
         <cucumverVersion>1.2.2</cucumverVersion>
         <springVersion>4.0.0.RELEASE</springVersion>
     </properties>

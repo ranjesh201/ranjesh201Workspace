@@ -25,7 +25,6 @@ import static org.junit.Assert.fail;
 
 
 @Component
-//@Scope("prototype")
 @Scope("cucumber-glue")
 public final class WebDriverUtil {
     protected static final Logger logger = LoggerFactory.getLogger(WebDriverUtil.class);
@@ -92,33 +91,5 @@ public final class WebDriverUtil {
         return getDriver().findElements(locator);
     }
 
-    public WebElement waitForExpectedElement(By locator) {
-        WebDriverWait wait = new WebDriverWait(getDriver(), DRIVER_WAIT);
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-    }
 
-    public List<WebElement> waitForExpectedElements(By locator) {
-        WebDriverWait wait = new WebDriverWait(getDriver(), DRIVER_WAIT);
-        return wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(locator));
-    }
-
-    public WebElement waitForExpectedElement(By locator, int waitTime) {
-        WebDriverWait wait = new WebDriverWait(getDriver(), waitTime);
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-    }
-    public List<WebElement> waitForExpectedElements(By locator, int waitTime) {
-        WebDriverWait wait = new WebDriverWait(getDriver(), waitTime);
-        return wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(locator));
-    }
-
-    public boolean exists(WebElement element, By selector){
-        List<WebElement> found = null;
-        if (element != null)
-            found = element.findElements(selector);
-        else
-            found = getDriver().findElements(selector);
-        if (found == null || found.size() == 0)
-            return false;
-        return true;
-    }
 }

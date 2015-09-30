@@ -5,9 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-/**
- * Created by user1 on 31/08/2015.
- */
+
 @Component
 public class HomePage extends AbstractPage{
     private static final String PAGE_NAME = "QA Works ";
